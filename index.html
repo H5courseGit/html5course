@@ -8,7 +8,36 @@
 </head>
 <body>
 	<div class="wrap">
-		
+		1.创建本地分支 
+			git branch develop(分支名字)
+		2.将本地分支提交到GitHub中
+			git push origin develop
+		3.在develop分支中进行开发
+			当前的分支切换到develop中
+			git switch develop
+
+			在develop分支中进行开发
+
+		4.在develop开发完成之后，把develop分支合并到master分支上
+			当前分支切换到master中
+			将develop分支合并到master分支中
+			git merge develop
+
+			然后进行提交
+			git add .
+			git commit -m '合并完成'
+		5.在多人协作的时候，我们不知道GitHub中的分支变成怎么样了（别人可能会进行提交，但是你不知道他改动了哪些），可以通过pull命令和fetch命令来获取GitHub中分支
+			git pull origin develop 会拉取GitHub分支的内容，并且直接替换当前的工作区的内容
+
+			为了避免直接替换掉工作区的内容，推荐使用fetch命令
+			先拉取GitHub的分支（比如我们拉取develop分支）
+			git fetch origin develop
+
+			拉取完之后查看分支情况（对比GitHub的develop分支与本地develop分支的差异）
+			git deff origin/develop
+
+			如果两者分支不相同，我们可以通过merge的命令进行分支合并
+			git merge origin/develop
 	</div>
 	<script type="text/javascript"></script>
 </body>
